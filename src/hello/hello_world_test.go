@@ -16,16 +16,30 @@ func TestGreetPerson(t *testing.T) {
 	assertCorrectMessage(t, got, want)
 }
 
-func TestGreetWithArguments(t *testing.T) {
-	got := Greet("argument")
+func TestEnglishGreetWithArguments(t *testing.T) {
+	got := Greet("argument", "English")
 	want := "Hello, argument!"
 
 	assertCorrectMessage(t, got, want)
 }
 
-func TestGreetWithEmptyArgument(t *testing.T) {
-	got := Greet("")
+func TestEnglishGreetWithEmptyArgument(t *testing.T) {
+	got := Greet("", "English")
 	want := "Hello, world!"
+
+	assertCorrectMessage(t, got, want)
+}
+
+func TestRomanianGreetWithArguments(t *testing.T) {
+	got := Greet("argument", "Romanian")
+	want := "Salut, argument!"
+
+	assertCorrectMessage(t, got, want)
+}
+
+func TestRomanianGreetWithEmptyArgument(t *testing.T) {
+	got := Greet("", "English")
+	want := "Salut, world!"
 
 	assertCorrectMessage(t, got, want)
 }
