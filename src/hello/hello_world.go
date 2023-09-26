@@ -2,22 +2,37 @@ package hello
 
 import "fmt"
 
-const greetingPrefix = "Hello,"
+const (
+	romanian = "Romanian"
+
+	emptySpace = " "
+	englishGreetingPrefix = "Hello,"
+	romanianGreetingPrefix = "Salut,"
+)
 
 func GreetWorld() string {
-	return greetingPrefix + " world!"
+	return englishGreetingPrefix + " world!"
 }
 
 func GreetPerson(personName string) string {
-	return fmt.Sprintf("%s %s!", greetingPrefix, personName)
+	return fmt.Sprintf("%s %s!", englishGreetingPrefix, personName)
 }
 
-func Greet(greeted string) string {
-	result := GreetPerson(greeted)
-
+func Greet(greeted, language string) string {
 	if greeted == "" {
-		result = GreetWorld()
+		greeted = "world"
 	}
 
-	return result
+	return greetingPrefix(language) + emptySpace + greeted + "!"
+}
+
+func greetingPrefix(language string) (prefix string) {
+	switch language {
+	case romanian:
+		prefix = romanianGreetingPrefix
+	default:
+		prefix = englishGreetingPrefix
+	}
+
+	return
 }

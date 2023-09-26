@@ -38,7 +38,7 @@ func TestRomanianGreetWithArguments(t *testing.T) {
 }
 
 func TestRomanianGreetWithEmptyArgument(t *testing.T) {
-	got := Greet("", "English")
+	got := Greet("", "Romanian")
 	want := "Salut, world!"
 
 	assertCorrectMessage(t, got, want)
