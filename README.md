@@ -5,7 +5,7 @@ This repository is a learning path for Go programming language.
 The learning path of the current repository will follow the [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests/) lessons.
 
 ## Roadmap
-- [ ] Build the `Hello World` app with tests
+- [x] Build the `Hello World` app with tests
 - [ ] Go through the basic data structures
 - [ ] Dive into the structures, methods and interfaces
 - [ ] Understand pointers and error handling
