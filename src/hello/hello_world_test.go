@@ -19,3 +19,21 @@ func TestGreetPerson(t *testing.T) {
 		t.Errorf("got %q want %q", got, want)
 	}
 }
+
+func TestGreetWithArguments(t *testing.T) {
+	got := Greet("argument")
+	want := "Hello, argument!"
+
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
+}
+
+func TestGreetWithEmptyArgument(t *testing.T) {
+	got := Greet("")
+	want := "Hello, world!"
+
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
+}
