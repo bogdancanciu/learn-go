@@ -19,3 +19,22 @@ func SumAll(numbersToSum ...[]int) (sums []int) {
 
 	return
 }
+
+func SumAllTails(numbersToSum ...[]int) (sums []int) {
+	defaultValue := 0
+
+	for _, numbers:= range numbersToSum {
+		if hasElements(numbers){
+			tail := numbers[1:]
+			sums = append(sums, Sum(tail))
+		} else{
+			sums = append(sums, defaultValue)
+		}
+	}
+
+	return
+}
+
+func hasElements(numbers []int) bool {
+	return len(numbers) > 0
+}
