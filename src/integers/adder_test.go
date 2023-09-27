@@ -1,6 +1,9 @@
 package integers
 
-import "testing"
+import (
+	"testing"
+	"reflect"
+)
 
 func TestAdder(t *testing.T) {
 	sum := Add(2, 2)
@@ -25,7 +28,7 @@ func TestSumAll(t *testing.T) {
 	got := SumAll([]int{1,2,3}, []int{9,5,1})
 	want := []int{6, 15}
 
-	if got != want {
+	if !reflect.DeepEqual(got, want) {
 		t.Errorf("expected %v but got %v", want, got)
 	}
 }
