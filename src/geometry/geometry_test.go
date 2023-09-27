@@ -11,7 +11,6 @@ func TestPerimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
-
 	t.Run("rectangle", func(t *testing.T) {
 		rectangle := Rectangle{12, 6}
 		got := rectangle.Area()
