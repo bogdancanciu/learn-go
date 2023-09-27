@@ -8,7 +8,7 @@ The learning path of the current repository will follow the [Learn Go with Tests
 - [x] Build the `Hello World` app with tests
 - [X] Go through the basic data structures
 - [x] Dive into the structures, methods and interfaces
-- [ ] Understand pointers and error handling
+- [X] Understand pointers and error handling
 - [ ] Understand maps
 - [ ] Dependency Injection in Go
 - [ ] Mocking practices in Go
