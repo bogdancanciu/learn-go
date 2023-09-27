@@ -17,6 +17,15 @@ func TestSum(t *testing.T) {
 	want := 22
 
 	if got != want {
-		t.Errorf("expected '%d' but got '%d'", got, want)
+		t.Errorf("expected '%d' but got '%d'", want, got)
+	}
+}
+
+func TestSumAll(t *testing.T) {
+	got := SumAll([]int{1,2,3}, []int{9,5,1})
+	want := []int{6, 15}
+
+	if got != want {
+		t.Errorf("expected %v but got %v", want, got)
 	}
 }
