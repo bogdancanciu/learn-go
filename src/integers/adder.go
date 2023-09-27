@@ -27,7 +27,7 @@ func SumAllTails(numbersToSum ...[]int) (sums []int) {
 		if hasElements(numbers){
 			tail := numbers[1:]
 			sums = append(sums, Sum(tail))
-		} else{
+		} else {
 			sums = append(sums, defaultValue)
 		}
 	}

@@ -6,7 +6,7 @@ The learning path of the current repository will follow the [Learn Go with Tests
 
 ## Roadmap
 - [x] Build the `Hello World` app with tests
-- [ ] Go through the basic data structures
+- [X] Go through the basic data structures
 - [ ] Dive into the structures, methods and interfaces
 - [ ] Understand pointers and error handling
 - [ ] Understand maps
