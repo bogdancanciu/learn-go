@@ -1,14 +1,20 @@
-package disctionary
+package dictionary
 
 import "testing"
 
 func TestSearch(t *testing.T) {
-	dictionary := map[string]string{"test": "this is just a test"}
+	dictionary := Dictionary{"firstKey": "this is value"}
 
-	got := Search(dictionary, "test")
-	want := "this is just a test"
+	got := dictionary.Search("firstKey")
+	want := "this is value"
+
+	assertStrings(t, got, want)
+}
+
+func assertStrings(t testing.TB, got, want string) {
+	t.Helper()
 
 	if got != want {
-		t.Errorf("got %q want %q given, %q", got, want, "test")
+		t.Errorf("got %q want %q", got, want)
 	}
 }
