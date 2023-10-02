@@ -12,6 +12,19 @@ func (e DictionaryErr) Error() string {
 	return string(e)
 }
 
+func (d Dictionary) Update(word, definition string) (err error) {
+	_, searchErr := d.Search(word)
+
+	switch searchErr {
+	case ErrKeyNotFound:
+		err = ErrKeyNotFound
+	case nil:
+		d[word] = definition
+	}
+
+	return
+}
+
 func (d Dictionary) Add(word, definition string) (err error) {
 	_, searchErr := d.Search(word)
 
