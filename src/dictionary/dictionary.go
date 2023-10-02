@@ -1,7 +1,17 @@
 package dictionary
 
+import "errors"
+
 type Dictionary map[string]string
 
-func (d Dictionary) Search(word string) string {
-	return d[word]
+var ErrKeyNotFound = errors.New("Key could not be found.")
+
+func (d Dictionary) Search(word string) (result string, err error) {
+	result, found := d[word]
+
+	if !found {
+		err = ErrKeyNotFound
+	}
+
+	return
 }
