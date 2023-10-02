@@ -47,3 +47,7 @@ func (d Dictionary) Search(word string) (result string, err error) {
 
 	return
 }
+
+func (d Dictionary) Delete(word string) {
+	delete(d, word)
+}
