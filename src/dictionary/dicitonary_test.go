@@ -6,9 +6,10 @@ func TestSearch(t *testing.T) {
 	dictionary := Dictionary{"test": "this is just a test"}
 
 	t.Run("known word", func(t *testing.T) {
-		got, _ := dictionary.Search("test")
+		got, err := dictionary.Search("test")
 		want := "this is just a test"
 
+		assertNoError(t, err)
 		assertStrings(t, got, want)
 	})
 
@@ -21,16 +22,23 @@ func TestSearch(t *testing.T) {
 
 func TestAdd(t *testing.T) {
 	dictionary := Dictionary{}
-	dictionary.Add("test", "this is just a test")
+	key := "test"
+	value := "this is just a test"
+	dictionary.Add(key, value)
 
 	want := "this is just a test"
 	got, err := dictionary.Search("test")
 
-	if err != nil {
-		t.Fatal("should find added word:", err)
-	}
-
+	assertNoError(t, err)
 	assertStrings(t, got, want)
+}
+
+func assertNoError(t testing.TB, err error) {
+	t.Helper()
+
+	if err != nil {
+		t.Fatal("Unexpected error occured: ", err)
+	}
 }
 
 func assertError(t testing.TB, got, want error) {
