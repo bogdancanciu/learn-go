@@ -10,7 +10,7 @@ The learning path of the current repository will follow the [Learn Go with Tests
 - [x] Dive into the structures, methods and interfaces
 - [X] Understand pointers and error handling
 - [X] Understand maps
-- [ ] Dependency Injection in Go
+- [X] Dependency Injection in Go
 - [ ] Mocking practices in Go
 - [ ] Concurrency concepts
 - [ ] Process synchronisation
