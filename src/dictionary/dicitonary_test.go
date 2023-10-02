@@ -40,9 +40,11 @@ func TestAdd(t *testing.T) {
 		definition := "this is just a test"
 		dictionary := Dictionary{word: definition}
 		err := dictionary.Add(word, "new test")
+		got, searchErr := dictionary.Search(word)
 
-		assertError(t, err, ErrWordExists)
-		assertDefinition(t, dictionary, word, definition)
+		assertNoError(t, searchErr)
+		assertError(t, err, ErrKeyExists)
+		assertStrings(t, got, definition)
 	})
 }
 
