@@ -11,7 +11,7 @@ The learning path of the current repository will follow the [Learn Go with Tests
 - [X] Understand pointers and error handling
 - [X] Understand maps
 - [X] Dependency Injection in Go
-- [ ] Mocking practices in Go
+- [X] Mocking practices in Go
 - [ ] Concurrency concepts
 - [ ] Process synchronisation
 - [ ] Reflection concept
