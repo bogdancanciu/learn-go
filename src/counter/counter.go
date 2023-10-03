@@ -7,7 +7,7 @@ import (
 )
 
 const finalWord = "Go!"
-const countdownStart = 3
+const CountdownStart = 3
 
 type Sleeper interface {
 	Sleep()
@@ -19,6 +19,16 @@ type SpySleeper struct {
 
 type DefaultSleeper struct {}
 
+type DelayedWriter struct {
+	Writer io.Writer
+	Sleeper Sleeper
+}
+
+func (dw *DelayedWriter) Write(value any) {
+	fmt.Fprintln(dw.Writer, value)
+	dw.Sleeper.Sleep()
+}
+
 func (s *SpySleeper) Sleep() {
 	s.Calls++
 }
@@ -28,9 +38,10 @@ func (d *DefaultSleeper) Sleep() {
 }
 
 func Countdown(out io.Writer, s Sleeper) {
-	for i := countdownStart; i > 0; i-- {
-		fmt.Fprintln(out, i)
-		s.Sleep()
+	delayedWriter := DelayedWriter{out, s}
+
+	for i := CountdownStart; i > 0; i-- {
+		delayedWriter.Write(i)
 	}
 
 	fmt.Fprint(out, finalWord)
