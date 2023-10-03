@@ -12,7 +12,7 @@ The learning path of the current repository will follow the [Learn Go with Tests
 - [X] Understand maps
 - [X] Dependency Injection in Go
 - [X] Mocking practices in Go
-- [ ] Concurrency concepts
+- [X] Concurrency concepts
 - [ ] Process synchronisation
 - [ ] Reflection concept
 - [ ] Concurrency-safe access
