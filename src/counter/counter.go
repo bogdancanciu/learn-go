@@ -17,14 +17,20 @@ type SpySleeper struct {
 	Calls int
 }
 
+type DefaultSleeper struct {}
+
 func (s *SpySleeper) Sleep() {
 	s.Calls++
 }
 
-func Countdown(out io.Writer) {
+func (d *DefaultSleeper) Sleep() {
+	time.Sleep(1 * time.Second)
+}
+
+func Countdown(out io.Writer, s Sleeper) {
 	for i := countdownStart; i > 0; i-- {
 		fmt.Fprintln(out, i)
-		time.Sleep(1 * time.Second)
+		s.Sleep()
 	}
 
 	fmt.Fprint(out, finalWord)
