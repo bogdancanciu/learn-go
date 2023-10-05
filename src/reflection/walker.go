@@ -1,5 +1,7 @@
 package walker
 
 func walk(x interface{}, fn func(input string)) {
-	fn("Some input")
+	val := reflect.ValueOf(x)
+	field := val.Field(0)
+	fn(field.String())
 }
