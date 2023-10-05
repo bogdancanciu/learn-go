@@ -1,15 +1,22 @@
 package racer
 
 import(
+	"fmt"
+	"time"
 	"net/http"
 )
 
-func Race(a, b string) (winner string) {
+const Timeout = 10 * time.Second
+var TimeoutErr = fmt.Errorf("Request timeout")
+
+func Race(a, b string) (winner string, error error) {
 	select {
 	case <-ping(a):
-		return a
+		return a, nil
 	case <-ping(b):
-		return b
+		return b, nil
+	case <-time.After(Timeout):
+		return "", TimeoutErr
 	}
 }
 
