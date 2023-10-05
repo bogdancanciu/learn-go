@@ -14,7 +14,7 @@ The learning path of the current repository will follow the [Learn Go with Tests
 - [X] Mocking practices in Go
 - [X] Concurrency concepts
 - [X] Process synchronisation
-- [ ] Reflection concept
+- [X] Reflection concept
 - [ ] Concurrency-safe access
 - [ ] Understand the `context` library
 - [ ] Property based testing
