@@ -16,9 +16,8 @@ The learning path of the current repository will follow the [Learn Go with Tests
 - [X] Process synchronisation
 - [X] Reflection concept
 - [X] Concurrency-safe access
-- [ ] Understand the `context` library
+- [X] Understand the `context` library
 - [ ] Property based testing
-- [ ] Maths usage
 - [ ] File system (reading files)
 - [ ] Templating
 - [ ] Generics
